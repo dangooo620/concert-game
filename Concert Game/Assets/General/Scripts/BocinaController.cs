@@ -4,7 +4,7 @@ public class BocinaController : MonoBehaviour
 {
     private bool isOn = false;
     [SerializeField]
-    private AudioClip sonido;
+    private AudioClip[] canciones;
 
     void Start()
     {
@@ -20,6 +20,6 @@ public class BocinaController : MonoBehaviour
 
     public void playExplosion()
     {
-        AudioSource.PlayClipAtPoint(sonido, transform.position);
+        AudioSource.PlayClipAtPoint(canciones[1], transform.position);
     }
 }
