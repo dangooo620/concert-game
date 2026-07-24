@@ -5,6 +5,7 @@ public class BocinaController : MonoBehaviour
     private bool isOn = false;
     [SerializeField]
     private AudioClip[] canciones;
+    private int cancionActual;
 
     void Start()
     {
@@ -14,12 +15,18 @@ public class BocinaController : MonoBehaviour
     public void Toggle()
     {
         isOn = !isOn;
-        //luz.enabled = !isOn;
-        //Debug.Log("TOGGLE");
+
+        AudioSource audioSource = GetComponent<AudioSource>();
+
+        if (isOn)
+        {
+            audioSource.clip = canciones[cancionActual]; 
+            audioSource.Play();                          
+        }
+        else
+        {
+            audioSource.Stop();      
+        }
     }
 
-    public void playExplosion()
-    {
-        AudioSource.PlayClipAtPoint(canciones[1], transform.position);
-    }
 }

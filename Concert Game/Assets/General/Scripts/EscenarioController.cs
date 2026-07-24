@@ -47,6 +47,7 @@ public class EscenarioController : MonoBehaviour
     public ReflectorController[] reflectores;
     private int reflectorSeleccionado;
     private bool toggleReflector = false;
+    //public BocinaController bocina;
 
     void Start()
     {
@@ -88,6 +89,11 @@ public class EscenarioController : MonoBehaviour
                 reflectores[reflectorSeleccionado].Rotate(mouseX, mouseY);
             }
         }
+
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    bocina.Toggle();
+        //}
     }
 }
 
