@@ -3,16 +3,40 @@ using UnityEngine;
 public class EscenarioController : MonoBehaviour
 {
     public ReflectorController[] reflectores;
+    private int reflectorSeleccionado = -1;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        //Debug.Log("ENTRA");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        for (int i = 0; i < reflectores.Length; i++)
+        {
+            if(Input.GetKeyDown(KeyCode.Alpha1 + i)) { 
+                reflectorSeleccionado = i;
+                Debug.Log("Reflector" + (i + 1) + "seleccionado");
+            }
+        }
+
+        if (reflectorSeleccionado >= 0 && Input.GetKeyDown(KeyCode.E))
+        {
+            reflectores[reflectorSeleccionado].Toggle();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            reflectorSeleccionado = -1;
+            Debug.Log("Ningún reflector se encuentra seleccionado");
+        }
+
+        if (reflectorSeleccionado >= 0)
+        {
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = Input.GetAxis("Mouse Y");
+            reflectores[reflectorSeleccionado].Rotate(mouseX, mouseY);
+        }
     }
 }
+
