@@ -47,7 +47,7 @@ public class EscenarioController : MonoBehaviour
     public ReflectorController[] reflectores;
     private int reflectorSeleccionado;
     private bool toggleReflector = false;
-    //public BocinaController bocina;
+    public BocinaController[] bocinas;
 
     void Start()
     {
@@ -56,6 +56,7 @@ public class EscenarioController : MonoBehaviour
 
     void Update()
     {
+        // INPUTS DE LUCES
         if (Input.GetKeyDown(KeyCode.Q))
         {
             toggleReflector = !toggleReflector;
@@ -90,10 +91,33 @@ public class EscenarioController : MonoBehaviour
             }
         }
 
-        //if (Input.GetKeyDown(KeyCode.R))
-        //{
-        //    bocina.Toggle();
-        //}
+        // INPUTS DE BOCINAS
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            for (int i = 0; i < bocinas.Length; i++) {
+
+                bocinas[i].Toggle();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            for (int i = 0; i < bocinas.Length; i++)
+            {
+
+                bocinas[i].PreviousSong();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            for (int i = 0; i < bocinas.Length; i++)
+            {
+
+                bocinas[i].NextSong();
+            }
+        }
     }
 }
 
