@@ -48,6 +48,7 @@ public class EscenarioController : MonoBehaviour
     private int reflectorSeleccionado;
     private bool toggleReflector = false;
     public BocinaController[] bocinas;
+    public PantallaController pantalla;
 
     void Start()
     {
@@ -64,7 +65,6 @@ public class EscenarioController : MonoBehaviour
             {
                 reflectorSeleccionado = -1;
             }
-            Debug.Log("Entra");
         }
 
         if (toggleReflector)
@@ -117,6 +117,12 @@ public class EscenarioController : MonoBehaviour
 
                 bocinas[i].NextSong();
             }
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+             pantalla.Toggle();
         }
     }
 }
