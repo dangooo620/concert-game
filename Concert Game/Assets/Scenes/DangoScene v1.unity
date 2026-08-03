@@ -197,7 +197,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6776755}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -897,7 +897,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664807420}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -2844,6 +2844,7 @@ MonoBehaviour:
   bocinas:
   - {fileID: 2035997564}
   - {fileID: 789882205}
+  pantalla: {fileID: 0}
 --- !u!1 &1322659887566349447
 GameObject:
   m_ObjectHideFlags: 0
@@ -3443,8 +3444,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 330585546}
-  - {fileID: 6776759}
-  - {fileID: 664807424}
   - {fileID: 2147054941}
   - {fileID: 410087041}
   - {fileID: 832575519}
@@ -3455,3 +3454,5 @@ SceneRoots:
   - {fileID: 1958508579}
   - {fileID: 195244511}
   - {fileID: 2014793996}
+  - {fileID: 6776759}
+  - {fileID: 664807424}
