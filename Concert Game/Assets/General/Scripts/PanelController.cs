@@ -7,21 +7,24 @@ public class ControlEspecificoPanel : MonoBehaviour
 {
     private Joystick panelLateral;
 
-    // CAMARAS
+    // Camaras
     public GameObject Camera1;
     public GameObject Camera2;
     public GameObject Camera3;
 
-    // BOCINAS
+    // Bocinas
     public BocinaController[] bocinas;
 
-    // PANTALLA
+    // Pantalla
     public PantallaController pantalla;
 
-    // LUCES
+    // Luces
     public ReflectorController[] reflectores;
     private int reflectorSeleccionado;
     private bool toggleReflector = false;
+
+    // Joystick
+    public float velocidadReflector = 120f;
 
     void Start()
     {
@@ -51,13 +54,32 @@ public class ControlEspecificoPanel : MonoBehaviour
             }
         }
 
+        // Rotacion con Mouse
+        //if (toggleReflector && reflectorSeleccionado >= 0)
+        //{
+        //    float mouseX = Input.GetAxis("Mouse X");
+        //    float mouseY = Input.GetAxis("Mouse Y");
+        //    reflectores[reflectorSeleccionado].Rotate(mouseX, mouseY);
+        //}
+
+        // Rotacion con Joystick
+        if (toggleReflector && reflectorSeleccionado >= 0)
+        {
+            Vector2 movimientoJoystick = panelLateral.stick.ReadValue();
+
+            if (movimientoJoystick.magnitude > 0.1f)
+            {
+                reflectores[reflectorSeleccionado].Rotate(movimientoJoystick.x * velocidadReflector * Time.deltaTime, movimientoJoystick.y *velocidadReflector * Time.deltaTime);
+            }
+        }
+
     }
 
     void EjecutarAccion(string nombreBoton)
     {
         switch (nombreBoton)
         {
-            //CAMARAS
+            // Camaras
             case "button11":
                 CameraOne();
                 break;
@@ -70,7 +92,7 @@ public class ControlEspecificoPanel : MonoBehaviour
                 CameraThree();
                 break;
 
-            //BOCINAS
+            // Bocinas
             case "button18":
                 for (int i = 0; i < bocinas.Length; i++)
                 {
@@ -95,14 +117,42 @@ public class ControlEspecificoPanel : MonoBehaviour
                 }
                 break;
 
-            // PANTALLA
+            // Pantalla
             case "button19":
                 pantalla.Toggle();
                 break;
 
-            // LUCES
+            // Luces
             case "button22":
                 Reflector();
+                break;
+
+            case "trigger":
+                SeleccionarReflector(0);
+                break;
+
+            case "button2":
+                SeleccionarReflector(1);
+                break;
+
+            case "button3":
+                SeleccionarReflector(2);
+                break;
+
+            case "button6":
+                SeleccionarReflector(3);
+                break;
+
+            case "button7":
+                SeleccionarReflector(4);
+                break;
+
+            case "button8":
+                SeleccionarReflector(5);
+                break;
+
+            case "button17":
+                ToggleReflectorSeleccionado();
                 break;
 
 
@@ -110,6 +160,7 @@ public class ControlEspecificoPanel : MonoBehaviour
                 Debug.Log($"Presionaste {nombreBoton}, pero aún no tiene una instrucción específica.");
                 break;
         }
+
     }
 
 
@@ -140,7 +191,36 @@ public class ControlEspecificoPanel : MonoBehaviour
         if (!toggleReflector)
         {
             reflectorSeleccionado = -1;
-            Debug.Log("Reflector Activadooopp");
+            Debug.Log("Desactivado la seleccion de luces");
+        }
+
+    }
+
+    void SeleccionarReflector(int indice)
+    {
+        //toggleReflector = !toggleReflector;
+        if (!toggleReflector)
+        {
+            reflectorSeleccionado = -1;
+            Debug.Log("Hay que activar la seleccion de luces");
+            return;
+        }
+
+        if (indice >= 0 && indice < reflectores.Length)
+        {
+            reflectorSeleccionado = indice;
+            Debug.Log("Reflector" + (indice + 1) + " seleccionado");
+        }
+    }
+
+    void ToggleReflectorSeleccionado ()
+    {
+        if (!toggleReflector)
+            return;
+
+        if (reflectorSeleccionado >= 0)
+        {
+            reflectores[reflectorSeleccionado].Toggle();
         }
     }
 
