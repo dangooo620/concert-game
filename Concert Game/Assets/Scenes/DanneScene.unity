@@ -1168,7 +1168,13 @@ MonoBehaviour:
   - {fileID: 2035997564}
   - {fileID: 789882205}
   pantalla: {fileID: 1300525303}
-  reflectores: []
+  reflectores:
+  - {fileID: 847830957}
+  - {fileID: 1727625888}
+  - {fileID: 454920375}
+  - {fileID: 1177186828}
+  - {fileID: 1300620509}
+  - {fileID: 1620899473}
 --- !u!4 &494052198
 Transform:
   m_ObjectHideFlags: 0
