@@ -49,6 +49,7 @@ public class EscenarioController : MonoBehaviour
     private bool toggleReflector = false;
     public BocinaController[] bocinas;
     public PantallaController pantalla;
+    public FogController fog;
 
     void Start()
     {
@@ -123,6 +124,12 @@ public class EscenarioController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
              pantalla.Toggle();
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            fog.Toggle();
+            Debug.Log("Entra");
         }
     }
 }
