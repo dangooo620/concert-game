@@ -13554,7 +13554,7 @@ Transform:
   m_GameObject: {fileID: 1241340784}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 7.34, y: 1.37, z: 24.71}
+  m_LocalPosition: {x: 7.34, y: 1.2347, z: 27.596}
   m_LocalScale: {x: 0.3503526, y: 0.3503526, z: 0.3503526}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20790,6 +20790,7 @@ MonoBehaviour:
   - {fileID: 2035997564}
   - {fileID: 789882205}
   pantalla: {fileID: 1300525303}
+  fog: {fileID: 0}
 --- !u!1 &1322659887566349447
 GameObject:
   m_ObjectHideFlags: 0
