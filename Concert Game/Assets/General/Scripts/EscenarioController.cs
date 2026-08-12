@@ -28,7 +28,7 @@
 //        if (Input.GetKeyDown(KeyCode.Escape))
 //        {
 //            reflectorSeleccionado = -1;
-//            Debug.Log("Ningún reflector se encuentra seleccionado");
+//            Debug.Log("Ningï¿½n reflector se encuentra seleccionado");
 //        }
 
 //        if (reflectorSeleccionado >= 0)
@@ -50,6 +50,7 @@ public class EscenarioController : MonoBehaviour
     public BocinaController[] bocinas;
     public PantallaController pantalla;
     public FogController fog;
+    public FlameController flames;
 
     void Start()
     {
@@ -130,6 +131,12 @@ public class EscenarioController : MonoBehaviour
         {
             fog.Toggle();
             Debug.Log("Entra");
+        }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        { 
+            Debug.Log("Flamas Entry");
+            flames.Toggle();                   
         }
     }
 }

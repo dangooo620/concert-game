@@ -26,13 +26,19 @@ public class ControlEspecificoPanel : MonoBehaviour
     // Joystick
     public float velocidadReflector = 120f;
 
+    // Fog
+    public FogController fog;
+
+    // Flames
+    public FlameController flames;
+
     void Start()
     {
         panelLateral = Joystick.all.FirstOrDefault(j => j.displayName.Contains("Saitek Side Panel Control Deck")) as Joystick;
 
         if (panelLateral == null)
         {
-            Debug.LogError("¡No se encontró el Panel Lateral! Revisa el nombre en el Input Debugger.");
+            Debug.LogError("ï¿½No se encontrï¿½ el Panel Lateral! Revisa el nombre en el Input Debugger.");
         }
         else
         {
@@ -155,9 +161,17 @@ public class ControlEspecificoPanel : MonoBehaviour
                 ToggleReflectorSeleccionado();
                 break;
 
+            case "button23":
+                fog.Toggle();
+                break;
+
+            case "button24":
+                flames.Toggle();
+                break;
+
 
             default:
-                Debug.Log($"Presionaste {nombreBoton}, pero aún no tiene una instrucción específica.");
+                Debug.Log($"Presionaste {nombreBoton}, pero aï¿½n no tiene una instrucciï¿½n especï¿½fica.");
                 break;
         }
 
