@@ -6345,6 +6345,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6e1a88e569c1f0b4894bd91d4736ecad, type: 3}
   - {fileID: 8300000, guid: be05caabb8d3d6d4fa9bf8ddeb7e49d0, type: 3}
   - {fileID: 8300000, guid: bc259e773fb37584798ccc87441df08b, type: 3}
+  - {fileID: 8300000, guid: a74b5e1c677b5ae4fb2c91134b20e805, type: 3}
+  - {fileID: 8300000, guid: 11b6090a8545ee14584ba3da6ddc06e4, type: 3}
+  - {fileID: 8300000, guid: 54773be456e853548a4df93480542a58, type: 3}
+  - {fileID: 8300000, guid: f4ff085087b56ab49b0705b6766e8e97, type: 3}
 --- !u!82 &789882206
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19944,7 +19948,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826007707}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -21884,6 +21888,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6e1a88e569c1f0b4894bd91d4736ecad, type: 3}
   - {fileID: 8300000, guid: be05caabb8d3d6d4fa9bf8ddeb7e49d0, type: 3}
   - {fileID: 8300000, guid: bc259e773fb37584798ccc87441df08b, type: 3}
+  - {fileID: 8300000, guid: a74b5e1c677b5ae4fb2c91134b20e805, type: 3}
+  - {fileID: 8300000, guid: 11b6090a8545ee14584ba3da6ddc06e4, type: 3}
+  - {fileID: 8300000, guid: 54773be456e853548a4df93480542a58, type: 3}
+  - {fileID: 8300000, guid: f4ff085087b56ab49b0705b6766e8e97, type: 3}
 --- !u!1 &2044473429
 GameObject:
   m_ObjectHideFlags: 0
